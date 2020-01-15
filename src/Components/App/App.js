@@ -3,6 +3,7 @@ import TodoList from '../TodoList/TodoList';
 import TodoItem from '../TodoInput/TodoInput'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'uuid';
 
 function App() {
     return (
