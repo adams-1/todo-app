@@ -15,8 +15,9 @@ export default class TodoInput extends React.Component {
                             className="form-control text-capitalize"
                             placeholder="add a todo item">
                     </input>
-                    <button type="submit" className="btn btn-primary"> Add</button>
+                    
                 </div>
+                <button type="submit" className="btn btn-primary mt-3"> Add</button>
                 
             </div>
         );
