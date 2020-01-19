@@ -4,24 +4,38 @@ import TodoItem from '../TodoInput/TodoInput'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'uuid';
+import uuid from 'uuid';
 
 class App extends React.Component {
 
     state = {
         items: [],
-        id: 0,
-        item: '',
+        id: uuid(),
+        title: '',
         editItem: false
     }
 
     handleChange = (e) => { 
         this.setState({
-            item: e.target.value
+            title: e.target.value
         });
     }
 
     handleSubmit = (e) => {
-        console.log(e);
+        
+        const newItem = {
+            id: this.state.id,
+            title: this.state.title
+        };
+
+        const updateItemsList = this.state.items.concat([newItem]);
+
+        this.setState({
+            items:updateItemsList,
+            id: uuid(),
+            title: '',
+            editItem: false
+        });
     }
 
     render() {
@@ -31,11 +45,11 @@ class App extends React.Component {
                     <div className="col-10 mx-auto col-md-8 mt-4">
                         <h3 className="text-capitalize text-center"> 
                             todo input</h3>
-                        <TodoItem item={this.state.item} 
+                        <TodoItem item={this.state.title} 
                                   handleChange={this.handleChange}
                                   handleSubmit={this.handleSubmit}
                         />
-                        <TodoList />
+                        <TodoList items={this.state.items}/>
                     </div>
                 </div>
             </div>
