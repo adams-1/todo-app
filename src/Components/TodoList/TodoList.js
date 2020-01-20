@@ -2,7 +2,7 @@ import React from 'react';
 import TodoItem from '../TodoItem/TodoItem';
 
 function TodoList(props) {
-    const {items} = props;
+    const {items, handleClear} = props;
     const todoList = items.map( item => <TodoItem key={item.id} title={item.title} />);
 
     return (
@@ -13,6 +13,7 @@ function TodoList(props) {
             <button
                 type="button"
                 className="btn btn-danger btn-block text-capitalize mt5"
+                onClick={handleClear}
             > clear list
             </button> 
             </ul>
