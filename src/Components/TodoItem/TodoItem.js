@@ -2,7 +2,7 @@ import React from 'react'
 
 function TodoItem(props) {
 
-    const {title} = props
+    const {title, handleDelete} = props
 
     return (
         <div>
@@ -10,7 +10,7 @@ function TodoItem(props) {
                 <h6>{title}</h6>
                 <div className="todo-icon">
                     <span className="mx-2 text-success"> e </span>
-                    <span className="mx-2 text-danger">x</span>
+                    <span className="mx-2 text-danger" onClick = {handleDelete}>x</span>
                 </div>
             </li>
         </div>

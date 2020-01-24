@@ -2,8 +2,8 @@ import React from 'react';
 import TodoItem from '../TodoItem/TodoItem';
 
 function TodoList(props) {
-    const {items, handleClear} = props;
-    const todoList = items.map( item => <TodoItem key={item.id} title={item.title} />);
+    const {items, handleClear, handleDelete} = props;
+    const todoList = items.map( item => <TodoItem key={item.id} title={item.title} handleDelete={() => handleDelete(item.id)} />);
 
     return (
         <div>
